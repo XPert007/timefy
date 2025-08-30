@@ -1,0 +1,200 @@
+{
+  "semester": {
+    "length_weeks": 16
+  },
+  "calendar": {
+    "working_days": ["Monday Tuesday"]
+  },
+  "rooms": {
+    "number_of_rooms": 6,
+    "details": [
+      {
+        "room_id": "31",
+        "type": "Lecture",
+        "capacity": 1
+      },
+      {
+        "room_id": "",
+        "type": "Lecture",
+        "capacity": 0
+      },
+      {
+        "room_id": "",
+        "type": "Lecture",
+        "capacity": 0
+      },
+      {
+        "room_id": "32",
+        "type": "Lecture",
+        "capacity": 1
+      },
+      {
+        "room_id": "",
+        "type": "Lecture",
+        "capacity": 0
+      },
+      {
+        "room_id": "",
+        "type": "Lecture",
+        "capacity": 0
+      }
+    ]
+  },
+  "faculty": {
+    "number_of_faculty": 5,
+    "details": [
+      {
+        "faculty_id": "meow",
+        "name": "meowmeow",
+        "subjects": ["math"],
+        "expertise": [""],
+        "max_weekly_hours": 0
+      },
+      {
+        "faculty_id": "neow",
+        "name": "neowneow",
+        "subjects": ["physics"],
+        "expertise": [""],
+        "max_weekly_hours": 0
+      },
+      {
+        "faculty_id": "",
+        "name": "",
+        "subjects": [""],
+        "expertise": [""],
+        "max_weekly_hours": 0
+      },
+      {
+        "faculty_id": "",
+        "name": "",
+        "subjects": [""],
+        "expertise": [""],
+        "max_weekly_hours": 0
+      },
+      {
+        "faculty_id": "",
+        "name": "",
+        "subjects": [""],
+        "expertise": [""],
+        "max_weekly_hours": 0
+      }
+    ]
+  },
+  "courses": [
+    {
+      "course_code": "Meth",
+      "title": "meth",
+      "subjects": [
+        {
+          "subject_code": "math",
+          "hours_per_week": 3
+        }
+      ]
+    },
+    {
+      "course_code": "",
+      "title": "",
+      "subjects": [
+        {
+          "subject_code": "",
+          "hours_per_week": null
+        }
+      ]
+    },
+    {
+      "course_code": "phy",
+      "title": "phy",
+      "subjects": [
+        {
+          "subject_code": "physics",
+          "hours_per_week": 3
+        }
+      ]
+    }
+  ],
+  "students": {
+    "number_of_students": 10,
+    "details": [
+      {
+        "student_id": "dw",
+        "major": "math",
+        "minor": "",
+        "skill_based": [""],
+        "ability_enhancement": [""],
+        "value_added": [""]
+      },
+      {
+        "student_id": "wa",
+        "major": "physics",
+        "minor": "",
+        "skill_based": [""],
+        "ability_enhancement": [""],
+        "value_added": [""]
+      },
+      {
+        "student_id": "",
+        "major": "",
+        "minor": "",
+        "skill_based": [""],
+        "ability_enhancement": [""],
+        "value_added": [""]
+      },
+      {
+        "student_id": "",
+        "major": "",
+        "minor": "",
+        "skill_based": [""],
+        "ability_enhancement": [""],
+        "value_added": [""]
+      },
+      {
+        "student_id": "",
+        "major": "",
+        "minor": "",
+        "skill_based": [""],
+        "ability_enhancement": [""],
+        "value_added": [""]
+      },
+      {
+        "student_id": "",
+        "major": "",
+        "minor": "",
+        "skill_based": [""],
+        "ability_enhancement": [""],
+        "value_added": [""]
+      },
+      {
+        "student_id": "",
+        "major": "",
+        "minor": "",
+        "skill_based": [""],
+        "ability_enhancement": [""],
+        "value_added": [""]
+      },
+      {
+        "student_id": "",
+        "major": "",
+        "minor": "",
+        "skill_based": [""],
+        "ability_enhancement": [""],
+        "value_added": [""]
+      },
+      {
+        "student_id": "",
+        "major": "",
+        "minor": "",
+        "skill_based": [""],
+        "ability_enhancement": [""],
+        "value_added": [""]
+      },
+      {
+        "student_id": "",
+        "major": "",
+        "minor": "",
+        "skill_based": [""],
+        "ability_enhancement": [""],
+        "value_added": [""]
+      }
+    ]
+  }
+}

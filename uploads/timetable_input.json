@@ -1,0 +1,983 @@
+{
+  "semester": {
+    "length_weeks": 16,
+    "min_class_duration": {
+      "hours": 1,
+      "minutes": 0
+    },
+    "max_class_duration": {
+      "hours": 2,
+      "minutes": 0
+    }
+  },
+  "calendar": {
+    "working_days": [
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu",
+      "Fri"
+    ],
+    "daily_timings": {
+      "Mon": {
+        "start_time": "09:00",
+        "end_time": "17:00"
+      },
+      "Tue": {
+        "start_time": "09:00",
+        "end_time": "17:00"
+      },
+      "Wed": {
+        "start_time": "09:00",
+        "end_time": "17:00"
+      },
+      "Thu": {
+        "start_time": "09:00",
+        "end_time": "17:00"
+      },
+      "Fri": {
+        "start_time": "09:00",
+        "end_time": "17:00"
+      }
+    }
+  },
+  "rooms": {
+    "number_of_rooms": 10,
+    "details": [
+      {
+        "room_id": "R101",
+        "type": "Lecture",
+        "capacity": 100
+      },
+      {
+        "room_id": "R102",
+        "type": "Lecture",
+        "capacity": 80
+      },
+      {
+        "room_id": "R103",
+        "type": "Lecture",
+        "capacity": 60
+      },
+      {
+        "room_id": "LAB1",
+        "type": "Lab",
+        "capacity": 30
+      },
+      {
+        "room_id": "LAB2",
+        "type": "Lab",
+        "capacity": 25
+      },
+      {
+        "room_id": "LAB3",
+        "type": "Lab",
+        "capacity": 20
+      },
+      {
+        "room_id": "AUD1",
+        "type": "Auditorium",
+        "capacity": 200
+      },
+      {
+        "room_id": "R104",
+        "type": "Lecture",
+        "capacity": 50
+      },
+      {
+        "room_id": "R105",
+        "type": "Lecture",
+        "capacity": 70
+      },
+      {
+        "room_id": "LAB4",
+        "type": "Lab",
+        "capacity": 35
+      }
+    ]
+  },
+  "faculty": {
+    "number_of_faculty": 8,
+    "details": [
+      {
+        "faculty_id": "F01",
+        "name": "Dr. Leela",
+        "subjects": [
+          "BED301",
+          "EDU305"
+        ],
+        "expertise": [
+          "Teaching Methods",
+          "Educational Psychology"
+        ],
+        "max_weekly_hours": 18
+      },
+      {
+        "faculty_id": "F02",
+        "name": "Mr. Suresh",
+        "subjects": [
+          "PED302",
+          "PED402"
+        ],
+        "expertise": [
+          "Physical Education"
+        ],
+        "max_weekly_hours": 12
+      },
+      {
+        "faculty_id": "F03",
+        "name": "Ms. Priya",
+        "subjects": [
+          "BED401",
+          "BED402"
+        ],
+        "expertise": [
+          "Curriculum Studies"
+        ],
+        "max_weekly_hours": 15
+      },
+      {
+        "faculty_id": "F04",
+        "name": "Dr. Ramesh",
+        "subjects": [
+          "CS301",
+          "CS302"
+        ],
+        "expertise": [
+          "Computer Science",
+          "ICT"
+        ],
+        "max_weekly_hours": 20
+      },
+      {
+        "faculty_id": "F05",
+        "name": "Ms. Anjali",
+        "subjects": [
+          "ENG301",
+          "ENG302"
+        ],
+        "expertise": [
+          "English Literature"
+        ],
+        "max_weekly_hours": 14
+      },
+      {
+        "faculty_id": "F06",
+        "name": "Mr. Karthik",
+        "subjects": [
+          "MATH301",
+          "MATH302"
+        ],
+        "expertise": [
+          "Mathematics"
+        ],
+        "max_weekly_hours": 16
+      },
+      {
+        "faculty_id": "F07",
+        "name": "Dr. Meena",
+        "subjects": [
+          "SCI301",
+          "SCI302"
+        ],
+        "expertise": [
+          "Science Education"
+        ],
+        "max_weekly_hours": 15
+      },
+      {
+        "faculty_id": "F08",
+        "name": "Ms. Kavita",
+        "subjects": [
+          "HIST301",
+          "HIST302"
+        ],
+        "expertise": [
+          "History"
+        ],
+        "max_weekly_hours": 12
+      }
+    ]
+  },
+  "courses": [
+    {
+      "course_code": "B.ED.3",
+      "title": "B.Ed Semester 3",
+      "subjects": [
+        {
+          "subject_code": "BED301",
+          "hours_per_week": 4
+        },
+        {
+          "subject_code": "PED302",
+          "hours_per_week": 3
+        },
+        {
+          "subject_code": "EDU305",
+          "hours_per_week": 2
+        }
+      ]
+    },
+    {
+      "course_code": "B.ED.4",
+      "title": "B.Ed Semester 4",
+      "subjects": [
+        {
+          "subject_code": "BED401",
+          "hours_per_week": 3
+        },
+        {
+          "subject_code": "PED402",
+          "hours_per_week": 2
+        }
+      ]
+    },
+    {
+      "course_code": "B.SC.CS",
+      "title": "B.Sc Computer Science",
+      "subjects": [
+        {
+          "subject_code": "CS301",
+          "hours_per_week": 4
+        },
+        {
+          "subject_code": "CS302",
+          "hours_per_week": 3
+        }
+      ]
+    },
+    {
+      "course_code": "B.A.ENG",
+      "title": "B.A English",
+      "subjects": [
+        {
+          "subject_code": "ENG301",
+          "hours_per_week": 3
+        },
+        {
+          "subject_code": "ENG302",
+          "hours_per_week": 3
+        }
+      ]
+    },
+    {
+      "course_code": "B.SC.MATH",
+      "title": "B.Sc Mathematics",
+      "subjects": [
+        {
+          "subject_code": "MATH301",
+          "hours_per_week": 4
+        },
+        {
+          "subject_code": "MATH302",
+          "hours_per_week": 3
+        }
+      ]
+    }
+  ],
+  "students": {
+    "number_of_students": 50,
+    "details": [
+      {
+        "student_id": "S1001",
+        "major": "BED301",
+        "minor": "EDU305",
+        "skill_based": [
+          "ICT for Education"
+        ],
+        "ability_enhancement": [
+          "Communication Skills"
+        ],
+        "value_added": [
+          "Yoga"
+        ]
+      },
+      {
+        "student_id": "S1002",
+        "major": "PED302",
+        "minor": "BED301",
+        "skill_based": [
+          "Classroom Management"
+        ],
+        "ability_enhancement": [
+          "Leadership"
+        ],
+        "value_added": [
+          "First Aid"
+        ]
+      },
+      {
+        "student_id": "S1003",
+        "major": "CS301",
+        "minor": "CS302",
+        "skill_based": [
+          "Python Programming"
+        ],
+        "ability_enhancement": [
+          "Problem Solving"
+        ],
+        "value_added": [
+          "Hackathon"
+        ]
+      },
+      {
+        "student_id": "S1004",
+        "major": "ENG301",
+        "minor": "ENG302",
+        "skill_based": [
+          "Creative Writing"
+        ],
+        "ability_enhancement": [
+          "Debating"
+        ],
+        "value_added": [
+          "Theatre"
+        ]
+      },
+      {
+        "student_id": "S1005",
+        "major": "MATH301",
+        "minor": "MATH302",
+        "skill_based": [
+          "Math Modelling"
+        ],
+        "ability_enhancement": [
+          "Critical Thinking"
+        ],
+        "value_added": [
+          "Chess"
+        ]
+      },
+      {
+        "student_id": "S1006",
+        "major": "BED301",
+        "minor": "PED302",
+        "skill_based": [
+          "Lesson Planning"
+        ],
+        "ability_enhancement": [
+          "Presentation Skills"
+        ],
+        "value_added": [
+          "Yoga"
+        ]
+      },
+      {
+        "student_id": "S1007",
+        "major": "PED402",
+        "minor": "BED401",
+        "skill_based": [
+          "Sports Coaching"
+        ],
+        "ability_enhancement": [
+          "Team Work"
+        ],
+        "value_added": [
+          "First Aid"
+        ]
+      },
+      {
+        "student_id": "S1008",
+        "major": "CS302",
+        "minor": "CS301",
+        "skill_based": [
+          "Algorithm Design"
+        ],
+        "ability_enhancement": [
+          "Problem Solving"
+        ],
+        "value_added": [
+          "Coding Club"
+        ]
+      },
+      {
+        "student_id": "S1009",
+        "major": "ENG302",
+        "minor": "ENG301",
+        "skill_based": [
+          "Literary Analysis"
+        ],
+        "ability_enhancement": [
+          "Communication"
+        ],
+        "value_added": [
+          "Debating"
+        ]
+      },
+      {
+        "student_id": "S1010",
+        "major": "MATH302",
+        "minor": "MATH301",
+        "skill_based": [
+          "Statistics"
+        ],
+        "ability_enhancement": [
+          "Logical Thinking"
+        ],
+        "value_added": [
+          "Math Club"
+        ]
+      },
+      {
+        "student_id": "S1011",
+        "major": "BED401",
+        "minor": "PED402",
+        "skill_based": [
+          "Curriculum Planning"
+        ],
+        "ability_enhancement": [
+          "Leadership"
+        ],
+        "value_added": [
+          "Yoga"
+        ]
+      },
+      {
+        "student_id": "S1012",
+        "major": "PED302",
+        "minor": "BED301",
+        "skill_based": [
+          "Physical Training"
+        ],
+        "ability_enhancement": [
+          "Team Work"
+        ],
+        "value_added": [
+          "Sports Club"
+        ]
+      },
+      {
+        "student_id": "S1013",
+        "major": "CS301",
+        "minor": "CS302",
+        "skill_based": [
+          "Java Programming"
+        ],
+        "ability_enhancement": [
+          "Problem Solving"
+        ],
+        "value_added": [
+          "Hackathon"
+        ]
+      },
+      {
+        "student_id": "S1014",
+        "major": "ENG301",
+        "minor": "ENG302",
+        "skill_based": [
+          "Writing Skills"
+        ],
+        "ability_enhancement": [
+          "Critical Thinking"
+        ],
+        "value_added": [
+          "Theatre"
+        ]
+      },
+      {
+        "student_id": "S1015",
+        "major": "MATH301",
+        "minor": "MATH302",
+        "skill_based": [
+          "Advanced Calculus"
+        ],
+        "ability_enhancement": [
+          "Analytical Thinking"
+        ],
+        "value_added": [
+          "Chess"
+        ]
+      },
+      {
+        "student_id": "S1016",
+        "major": "BED301",
+        "minor": "EDU305",
+        "skill_based": [
+          "ICT"
+        ],
+        "ability_enhancement": [
+          "Communication Skills"
+        ],
+        "value_added": [
+          "Yoga"
+        ]
+      },
+      {
+        "student_id": "S1017",
+        "major": "PED402",
+        "minor": "BED401",
+        "skill_based": [
+          "Sports Training"
+        ],
+        "ability_enhancement": [
+          "Team Work"
+        ],
+        "value_added": [
+          "First Aid"
+        ]
+      },
+      {
+        "student_id": "S1018",
+        "major": "CS302",
+        "minor": "CS301",
+        "skill_based": [
+          "C++ Programming"
+        ],
+        "ability_enhancement": [
+          "Problem Solving"
+        ],
+        "value_added": [
+          "Coding Club"
+        ]
+      },
+      {
+        "student_id": "S1019",
+        "major": "ENG302",
+        "minor": "ENG301",
+        "skill_based": [
+          "Literature Analysis"
+        ],
+        "ability_enhancement": [
+          "Communication"
+        ],
+        "value_added": [
+          "Debating"
+        ]
+      },
+      {
+        "student_id": "S1020",
+        "major": "MATH302",
+        "minor": "MATH301",
+        "skill_based": [
+          "Algebra"
+        ],
+        "ability_enhancement": [
+          "Logical Thinking"
+        ],
+        "value_added": [
+          "Math Club"
+        ]
+      },
+      {
+        "student_id": "",
+        "major": "",
+        "minor": "",
+        "skill_based": [
+          ""
+        ],
+        "ability_enhancement": [
+          ""
+        ],
+        "value_added": [
+          ""
+        ]
+      },
+      {
+        "student_id": "",
+        "major": "",
+        "minor": "",
+        "skill_based": [
+          ""
+        ],
+        "ability_enhancement": [
+          ""
+        ],
+        "value_added": [
+          ""
+        ]
+      },
+      {
+        "student_id": "",
+        "major": "",
+        "minor": "",
+        "skill_based": [
+          ""
+        ],
+        "ability_enhancement": [
+          ""
+        ],
+        "value_added": [
+          ""
+        ]
+      },
+      {
+        "student_id": "",
+        "major": "",
+        "minor": "",
+        "skill_based": [
+          ""
+        ],
+        "ability_enhancement": [
+          ""
+        ],
+        "value_added": [
+          ""
+        ]
+      },
+      {
+        "student_id": "",
+        "major": "",
+        "minor": "",
+        "skill_based": [
+          ""
+        ],
+        "ability_enhancement": [
+          ""
+        ],
+        "value_added": [
+          ""
+        ]
+      },
+      {
+        "student_id": "",
+        "major": "",
+        "minor": "",
+        "skill_based": [
+          ""
+        ],
+        "ability_enhancement": [
+          ""
+        ],
+        "value_added": [
+          ""
+        ]
+      },
+      {
+        "student_id": "",
+        "major": "",
+        "minor": "",
+        "skill_based": [
+          ""
+        ],
+        "ability_enhancement": [
+          ""
+        ],
+        "value_added": [
+          ""
+        ]
+      },
+      {
+        "student_id": "",
+        "major": "",
+        "minor": "",
+        "skill_based": [
+          ""
+        ],
+        "ability_enhancement": [
+          ""
+        ],
+        "value_added": [
+          ""
+        ]
+      },
+      {
+        "student_id": "",
+        "major": "",
+        "minor": "",
+        "skill_based": [
+          ""
+        ],
+        "ability_enhancement": [
+          ""
+        ],
+        "value_added": [
+          ""
+        ]
+      },
+      {
+        "student_id": "",
+        "major": "",
+        "minor": "",
+        "skill_based": [
+          ""
+        ],
+        "ability_enhancement": [
+          ""
+        ],
+        "value_added": [
+          ""
+        ]
+      },
+      {
+        "student_id": "",
+        "major": "",
+        "minor": "",
+        "skill_based": [
+          ""
+        ],
+        "ability_enhancement": [
+          ""
+        ],
+        "value_added": [
+          ""
+        ]
+      },
+      {
+        "student_id": "",
+        "major": "",
+        "minor": "",
+        "skill_based": [
+          ""
+        ],
+        "ability_enhancement": [
+          ""
+        ],
+        "value_added": [
+          ""
+        ]
+      },
+      {
+        "student_id": "",
+        "major": "",
+        "minor": "",
+        "skill_based": [
+          ""
+        ],
+        "ability_enhancement": [
+          ""
+        ],
+        "value_added": [
+          ""
+        ]
+      },
+      {
+        "student_id": "",
+        "major": "",
+        "minor": "",
+        "skill_based": [
+          ""
+        ],
+        "ability_enhancement": [
+          ""
+        ],
+        "value_added": [
+          ""
+        ]
+      },
+      {
+        "student_id": "",
+        "major": "",
+        "minor": "",
+        "skill_based": [
+          ""
+        ],
+        "ability_enhancement": [
+          ""
+        ],
+        "value_added": [
+          ""
+        ]
+      },
+      {
+        "student_id": "",
+        "major": "",
+        "minor": "",
+        "skill_based": [
+          ""
+        ],
+        "ability_enhancement": [
+          ""
+        ],
+        "value_added": [
+          ""
+        ]
+      },
+      {
+        "student_id": "",
+        "major": "",
+        "minor": "",
+        "skill_based": [
+          ""
+        ],
+        "ability_enhancement": [
+          ""
+        ],
+        "value_added": [
+          ""
+        ]
+      },
+      {
+        "student_id": "",
+        "major": "",
+        "minor": "",
+        "skill_based": [
+          ""
+        ],
+        "ability_enhancement": [
+          ""
+        ],
+        "value_added": [
+          ""
+        ]
+      },
+      {
+        "student_id": "",
+        "major": "",
+        "minor": "",
+        "skill_based": [
+          ""
+        ],
+        "ability_enhancement": [
+          ""
+        ],
+        "value_added": [
+          ""
+        ]
+      },
+      {
+        "student_id": "",
+        "major": "",
+        "minor": "",
+        "skill_based": [
+          ""
+        ],
+        "ability_enhancement": [
+          ""
+        ],
+        "value_added": [
+          ""
+        ]
+      },
+      {
+        "student_id": "",
+        "major": "",
+        "minor": "",
+        "skill_based": [
+          ""
+        ],
+        "ability_enhancement": [
+          ""
+        ],
+        "value_added": [
+          ""
+        ]
+      },
+      {
+        "student_id": "",
+        "major": "",
+        "minor": "",
+        "skill_based": [
+          ""
+        ],
+        "ability_enhancement": [
+          ""
+        ],
+        "value_added": [
+          ""
+        ]
+      },
+      {
+        "student_id": "",
+        "major": "",
+        "minor": "",
+        "skill_based": [
+          ""
+        ],
+        "ability_enhancement": [
+          ""
+        ],
+        "value_added": [
+          ""
+        ]
+      },
+      {
+        "student_id": "",
+        "major": "",
+        "minor": "",
+        "skill_based": [
+          ""
+        ],
+        "ability_enhancement": [
+          ""
+        ],
+        "value_added": [
+          ""
+        ]
+      },
+      {
+        "student_id": "",
+        "major": "",
+        "minor": "",
+        "skill_based": [
+          ""
+        ],
+        "ability_enhancement": [
+          ""
+        ],
+        "value_added": [
+          ""
+        ]
+      },
+      {
+        "student_id": "",
+        "major": "",
+        "minor": "",
+        "skill_based": [
+          ""
+        ],
+        "ability_enhancement": [
+          ""
+        ],
+        "value_added": [
+          ""
+        ]
+      },
+      {
+        "student_id": "",
+        "major": "",
+        "minor": "",
+        "skill_based": [
+          ""
+        ],
+        "ability_enhancement": [
+          ""
+        ],
+        "value_added": [
+          ""
+        ]
+      },
+      {
+        "student_id": "",
+        "major": "",
+        "minor": "",
+        "skill_based": [
+          ""
+        ],
+        "ability_enhancement": [
+          ""
+        ],
+        "value_added": [
+          ""
+        ]
+      },
+      {
+        "student_id": "",
+        "major": "",
+        "minor": "",
+        "skill_based": [
+          ""
+        ],
+        "ability_enhancement": [
+          ""
+        ],
+        "value_added": [
+          ""
+        ]
+      },
+      {
+        "student_id": "",
+        "major": "",
+        "minor": "",
+        "skill_based": [
+          ""
+        ],
+        "ability_enhancement": [
+          ""
+        ],
+        "value_added": [
+          ""
+        ]
+      }
+    ]
+  }
+}

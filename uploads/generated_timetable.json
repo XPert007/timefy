@@ -1,0 +1,203 @@
+{
+  "timetable": {
+    "Monday": [
+      {
+        "time": "09:00-11:00",
+        "course": "B.ED.3",
+        "subject": "BED301",
+        "room": "R101",
+        "faculty": "F01",
+        "students": [
+          "S1001",
+          "S1002",
+          "S1006",
+          "S1016"
+        ]
+      },
+      {
+        "time": "11:00-13:00",
+        "course": "B.SC.CS",
+        "subject": "CS301",
+        "room": "R102",
+        "faculty": "F04",
+        "students": [
+          "S1003",
+          "S1008",
+          "S1013",
+          "S1018"
+        ]
+      },
+      {
+        "time": "14:00-16:00",
+        "course": "B.A.ENG",
+        "subject": "ENG301",
+        "room": "R103",
+        "faculty": "F05",
+        "students": [
+          "S1004",
+          "S1009",
+          "S1014",
+          "S1019"
+        ]
+      }
+    ],
+    "Tuesday": [
+      {
+        "time": "09:00-11:00",
+        "course": "B.SC.MATH",
+        "subject": "MATH301",
+        "room": "R101",
+        "faculty": "F06",
+        "students": [
+          "S1005",
+          "S1010",
+          "S1015",
+          "S1020"
+        ]
+      },
+      {
+        "time": "11:00-13:00",
+        "course": "B.ED.4",
+        "subject": "BED401",
+        "room": "R102",
+        "faculty": "F03",
+        "students": [
+          "S1007",
+          "S1011",
+          "S1017"
+        ]
+      },
+      {
+        "time": "14:00-16:00",
+        "course": "B.ED.3",
+        "subject": "PED302",
+        "room": "R103",
+        "faculty": "F02",
+        "students": [
+          "S1002",
+          "S1006",
+          "S1012"
+        ]
+      }
+    ],
+    "Wednesday": [
+      {
+        "time": "09:00-11:00",
+        "course": "B.SC.CS",
+        "subject": "CS302",
+        "room": "R101",
+        "faculty": "F04",
+        "students": [
+          "S1003",
+          "S1008",
+          "S1013",
+          "S1018"
+        ]
+      },
+      {
+        "time": "11:00-13:00",
+        "course": "B.SC.MATH",
+        "subject": "MATH302",
+        "room": "R102",
+        "faculty": "F06",
+        "students": [
+          "S1005",
+          "S1010",
+          "S1015",
+          "S1020"
+        ]
+      },
+      {
+        "time": "14:00-16:00",
+        "course": "B.A.ENG",
+        "subject": "ENG302",
+        "room": "R103",
+        "faculty": "F05",
+        "students": [
+          "S1004",
+          "S1009",
+          "S1014",
+          "S1019"
+        ]
+      }
+    ],
+    "Thursday": [
+       {
+        "time": "09:00-11:00",
+        "course": "B.ED.3",
+        "subject": "BED301",
+        "room": "R101",
+        "faculty": "F01",
+        "students": [
+          "S1001",
+          "S1002",
+          "S1006",
+          "S1016"
+        ]
+      },
+      {
+        "time": "11:00-13:00",
+        "course": "B.ED.4",
+        "subject": "BED401",
+        "room": "R102",
+        "faculty": "F03",
+        "students": [
+          "S1007",
+          "S1011",
+          "S1017"
+        ]
+      },
+       {
+        "time": "14:00-16:00",
+        "course": "B.ED.3",
+        "subject": "EDU305",
+        "room": "R103",
+        "faculty": "F01",
+        "students": [
+          "S1001",
+          "S1016"
+        ]
+      }
+    ],
+    "Friday": [
+      {
+        "time": "09:00-11:00",
+        "course": "B.SC.CS",
+        "subject": "CS301",
+        "room": "R101",
+        "faculty": "F04",
+        "students": [
+          "S1003",
+          "S1008",
+          "S1013",
+          "S1018"
+        ]
+      },
+      {
+        "time": "11:00-13:00",
+        "course": "B.ED.4",
+        "subject": "PED402",
+        "room": "R102",
+        "faculty": "F02",
+        "students": [
+          "S1007",
+          "S1011",
+          "S1017"
+        ]
+      },
+       {
+        "time": "14:00-16:00",
+        "course": "B.SC.CS",
+        "subject": "CS302",
+        "room": "R103",
+        "faculty": "F04",
+        "students": [
+          "S1003",
+          "S1008",
+          "S1013",
+          "S1018"
+        ]
+      }
+    ]
+  }
+}

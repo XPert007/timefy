@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>NEP Timetable Admin UI</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+                background: #f5f5f5;
+            }
+            section {
+                background: #fff;
+                padding: 15px;
+                margin-bottom: 20px;
+                border-radius: 8px;
+                box-shadow: 0 0 5px #ccc;
+            }
+            h2 {
+                margin-top: 0;
+            }
+            h3 {
+                margin-bottom: 5px;
+            }
+            input,
+            select,
+            button {
+                padding: 5px;
+                margin: 2px;
+            }
+            input[type="number"] {
+                width: 70px;
+            }
+            input[type="time"] {
+                width: 100px;
+            }
+            textarea {
+                width: 100%;
+                height: 50px;
+            }
+            .container {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>NEP Timetable Admin UI</h1>
+
+        <section>
+            <h2>Semester Info</h2>
+            <label
+                >Weeks: <input type="number" id="semesterLength" value="16"
+            /></label>
+            <label>
+                Working Days:
+                <select id="workingDays">
+                    <option value="Mon-Fri">Mon-Fri</option>
+                    <option value="Mon-Sat">Mon-Sat</option>
+                    <option value="Custom">Custom</option>
+                </select>
+            </label>
+            <div id="customDaysDiv" style="display: none">
+                <input
+                    type="text"
+                    id="customDays"
+                    placeholder="Comma separated e.g. Mon,Tue,Wed"
+                />
+            </div>
+
+            <div style="margin-top: 10px">
+                <label>
+                    Minimum Class Duration:
+                    <input
+                        type="number"
+                        id="minHours"
+                        value="1"
+                        min="0"
+                        style="width: 50px"
+                    />
+                    h
+                    <input
+                        type="number"
+                        id="minMinutes"
+                        value="0"
+                        min="0"
+                        max="59"
+                        style="width: 50px"
+                    />
+                    m
+                </label>
+                <br />
+                <label>
+                    Maximum Class Duration:
+                    <input
+                        type="number"
+                        id="maxHours"
+                        value="2"
+                        min="0"
+                        style="width: 50px"
+                    />
+                    h
+                    <input
+                        type="number"
+                        id="maxMinutes"
+                        value="0"
+                        min="0"
+                        max="59"
+                        style="width: 50px"
+                    />
+                    m
+                </label>
+            </div>
+
+            <div style="margin-top: 10px">
+                <h3>Daily Timings</h3>
+                <div id="dailyTimingsContainer"></div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Rooms</h2>
+            <label
+                >Number of Rooms: <input type="number" id="numRooms" value="5"
+            /></label>
+            <button onclick="generateRooms()">Generate Room Inputs</button>
+            <div id="roomsContainer" class="container"></div>
+        </section>
+
+        <section>
+            <h2>Faculty</h2>
+            <label
+                >Number of Faculty:
+                <input type="number" id="numFaculty" value="3"
+            /></label>
+            <button onclick="generateFaculty()">Generate Faculty Inputs</button>
+            <div id="facultyContainer" class="container"></div>
+        </section>
+
+        <section>
+            <h2>Courses</h2>
+            <label
+                >Number of Courses:
+                <input type="number" id="numCourses" value="3"
+            /></label>
+            <button onclick="generateCourses()">Generate Course Inputs</button>
+            <div id="coursesContainer" class="container"></div>
+        </section>
+
+        <section>
+            <h2>Students</h2>
+            <label
+                >Number of Students:
+                <input type="number" id="numStudents" value="10"
+            /></label>
+            <button onclick="generateStudents()">
+                Generate Student Inputs
+            </button>
+            <div id="studentsContainer" class="container"></div>
+        </section>
+
+        <button
+            onclick="exportJSON()"
+            style="
+                padding: 10px 20px;
+                background: #4caf50;
+                color: white;
+                border: none;
+                border-radius: 5px;
+            "
+        >
+            Export JSON & Generate Timetable
+        </button>
+
+        <script>
+            const dailyTimingsContainer = document.getElementById(
+                "dailyTimingsContainer",
+            );
+
+            function updateDailyTimings() {
+                dailyTimingsContainer.innerHTML = "";
+                let days;
+                const workingDaysValue =
+                    document.getElementById("workingDays").value;
+                if (workingDaysValue === "Custom") {
+                    days = document
+                        .getElementById("customDays")
+                        .value.split(",");
+                } else {
+                    const startDay = workingDaysValue.split("-")[0];
+                    const endDay = workingDaysValue.split("-")[1];
+                    const dayOrder = [
+                        "Mon",
+                        "Tue",
+                        "Wed",
+                        "Thu",
+                        "Fri",
+                        "Sat",
+                        "Sun",
+                    ];
+                    const startIndex = dayOrder.indexOf(startDay);
+                    const endIndex = dayOrder.indexOf(endDay);
+                    days = dayOrder.slice(startIndex, endIndex + 1);
+                }
+                days.forEach((day) => {
+                    const div = document.createElement("div");
+                    div.innerHTML = `
+            <label>
+                ${day}:
+                <input type="time" class="startTime" value="09:00" />
+                -
+                <input type="time" class="endTime" value="17:00" />
+            </label>
+        `;
+                    div.dataset.day = day;
+                    dailyTimingsContainer.appendChild(div);
+                });
+            }
+
+            document
+                .getElementById("workingDays")
+                .addEventListener("change", () => {
+                    document.getElementById("customDaysDiv").style.display =
+                        document.getElementById("workingDays").value ===
+                        "Custom"
+                            ? "block"
+                            : "none";
+                    updateDailyTimings();
+                });
+            document
+                .getElementById("customDays")
+                .addEventListener("change", updateDailyTimings);
+            updateDailyTimings();
+
+            function generateRooms() {
+                const container = document.getElementById("roomsContainer");
+                container.innerHTML = "";
+                const n = +document.getElementById("numRooms").value;
+                for (let i = 0; i < n; i++) {
+                    const div = document.createElement("div");
+                    div.innerHTML = `
+            <input placeholder="Room ID" class="roomId">
+            <select class="roomType">
+                <option>Lecture</option><option>Lab</option><option>Auditorium</option>
+            </select>
+            <input type="number" placeholder="Capacity" class="roomCapacity">
+        `;
+                    container.appendChild(div);
+                }
+            }
+
+            function generateFaculty() {
+                const container = document.getElementById("facultyContainer");
+                container.innerHTML = "";
+                const n = +document.getElementById("numFaculty").value;
+                for (let i = 0; i < n; i++) {
+                    const div = document.createElement("div");
+                    div.innerHTML = `
+            <input placeholder="Faculty ID" class="facultyId">
+            <input placeholder="Name" class="facultyName">
+            <input placeholder="Subjects (comma separated)" class="facultySubjects">
+            <input placeholder="Expertise (comma separated)" class="facultyExpertise">
+            <input type="number" placeholder="Max Weekly Hours" class="facultyHours">
+        `;
+                    container.appendChild(div);
+                }
+            }
+
+            function generateCourses() {
+                const container = document.getElementById("coursesContainer");
+                container.innerHTML = "";
+                const n = +document.getElementById("numCourses").value;
+                for (let i = 0; i < n; i++) {
+                    const div = document.createElement("div");
+                    div.innerHTML = `
+            <input placeholder="Course Code" class="courseCode">
+            <input placeholder="Course Title" class="courseTitle">
+            <textarea placeholder="Subjects and hours (e.g. CS301:3,CS302:4)" class="courseSubjects"></textarea>
+        `;
+                    container.appendChild(div);
+                }
+            }
+
+            function generateStudents() {
+                const container = document.getElementById("studentsContainer");
+                container.innerHTML = "";
+                const n = +document.getElementById("numStudents").value;
+                for (let i = 0; i < n; i++) {
+                    const div = document.createElement("div");
+                    div.innerHTML = `
+            <input placeholder="Student ID" class="studentId">
+            <input placeholder="Major" class="studentMajor">
+            <input placeholder="Minor" class="studentMinor">
+            <input placeholder="Skill-based" class="studentSkill">
+            <input placeholder="Ability Enhancement" class="studentAbility">
+            <input placeholder="Value Added" class="studentValue">
+        `;
+                    container.appendChild(div);
+                }
+            }
+
+            function exportJSON() {
+                const data = {
+                    semester: {
+                        length_weeks:
+                            +document.getElementById("semesterLength").value,
+                        min_class_duration: {
+                            hours: +document.getElementById("minHours").value,
+                            minutes:
+                                +document.getElementById("minMinutes").value,
+                        },
+                        max_class_duration: {
+                            hours: +document.getElementById("maxHours").value,
+                            minutes:
+                                +document.getElementById("maxMinutes").value,
+                        },
+                    },
+                    calendar: { working_days: [], daily_timings: {} },
+                    rooms: {
+                        number_of_rooms:
+                            +document.getElementById("numRooms").value,
+                        details: [],
+                    },
+                    faculty: {
+                        number_of_faculty:
+                            +document.getElementById("numFaculty").value,
+                        details: [],
+                    },
+                    courses: [],
+                    students: {
+                        number_of_students:
+                            +document.getElementById("numStudents").value,
+                        details: [],
+                    },
+                };
+
+                const workingDaysValue =
+                    document.getElementById("workingDays").value;
+                if (workingDaysValue === "Custom") {
+                    data.calendar.working_days = document
+                        .getElementById("customDays")
+                        .value.split(",");
+                } else {
+                    const startDay = workingDaysValue.split("-")[0];
+                    const endDay = workingDaysValue.split("-")[1];
+                    const dayOrder = [
+                        "Mon",
+                        "Tue",
+                        "Wed",
+                        "Thu",
+                        "Fri",
+                        "Sat",
+                        "Sun",
+                    ];
+                    const startIndex = dayOrder.indexOf(startDay);
+                    const endIndex = dayOrder.indexOf(endDay);
+                    data.calendar.working_days = dayOrder.slice(
+                        startIndex,
+                        endIndex + 1,
+                    );
+                }
+
+                document
+                    .querySelectorAll("#dailyTimingsContainer div")
+                    .forEach((d) => {
+                        const day = d.dataset.day;
+                        const start = d.querySelector(".startTime").value;
+                        const end = d.querySelector(".endTime").value;
+                        data.calendar.daily_timings[day] = {
+                            start_time: start,
+                            end_time: end,
+                        };
+                    });
+
+                document
+                    .querySelectorAll("#roomsContainer div")
+                    .forEach((d) => {
+                        data.rooms.details.push({
+                            room_id: d.querySelector(".roomId").value,
+                            type: d.querySelector(".roomType").value,
+                            capacity: +d.querySelector(".roomCapacity").value,
+                        });
+                    });
+
+                document
+                    .querySelectorAll("#facultyContainer div")
+                    .forEach((d) => {
+                        data.faculty.details.push({
+                            faculty_id: d.querySelector(".facultyId").value,
+                            name: d.querySelector(".facultyName").value,
+                            subjects: d
+                                .querySelector(".facultySubjects")
+                                .value.split(","),
+                            expertise: d
+                                .querySelector(".facultyExpertise")
+                                .value.split(","),
+                            max_weekly_hours:
+                                +d.querySelector(".facultyHours").value,
+                        });
+                    });
+
+                document
+                    .querySelectorAll("#coursesContainer div")
+                    .forEach((d) => {
+                        const subs = d
+                            .querySelector(".courseSubjects")
+                            .value.split(",")
+                            .map((s) => {
+                                const [code, hours] = s.split(":");
+                                return {
+                                    subject_code: code.trim(),
+                                    hours_per_week: +hours,
+                                };
+                            });
+                        data.courses.push({
+                            course_code: d.querySelector(".courseCode").value,
+                            title: d.querySelector(".courseTitle").value,
+                            subjects: subs,
+                        });
+                    });
+
+                document
+                    .querySelectorAll("#studentsContainer div")
+                    .forEach((d) => {
+                        data.students.details.push({
+                            student_id: d.querySelector(".studentId").value,
+                            major: d.querySelector(".studentMajor").value,
+                            minor: d.querySelector(".studentMinor").value,
+                            skill_based: d
+                                .querySelector(".studentSkill")
+                                .value.split(","),
+                            ability_enhancement: d
+                                .querySelector(".studentAbility")
+                                .value.split(","),
+                            value_added: d
+                                .querySelector(".studentValue")
+                                .value.split(","),
+                        });
+                    });
+
+                fetch("/submit_json", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(data),
+                })
+                    .then((response) => {
+                        if (response.redirected) {
+                            window.location.href = response.url;
+                        } else {
+                            alert("Submission failed");
+                        }
+                    })
+                    .catch((err) => {
+                        console.error(err);
+                        alert("Error submitting JSON");
+                    });
+            }
+        </script>
+    </body>
+</html>
